@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/logos/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/logosfavicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/logos/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/fontawesome.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="style.css">
+
+      <title>TrackHockey</title>
+</head>
+
+<body>
+    
+    <!-- Navbar -->
+    <!-- <nav class="navbar navbar-primary navbar-expand-sm">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand mr-auto" href="#"><img src="./img/logos/logo.png" height="50" width="" alt=""></a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a class="nav-link" href="#">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contactus.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+
+    <!-- Slider -->
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-8">
+                    <h1><strong>FREE HOCKEY STATS TRACKER</strong></h1>
+                    <p>Nulla sodales dui nec nunc bibendum, id luctus turpis semper. Sed leo nibh, consequat eget libero sit amet, vehicula tempor risus. Proin euismod congue purus quis ornare. Vestibulum sit amet tincidunt dui, a mollis orci. Integer enim turpis, vestibulum et lacus eu, vestibulum elementum sapien. Aenean condimentum tellus lacus, non semper ex laoreet eu. Cras tellus dolor, viverra vitae dui ac, maximus tincidunt purus. Etiam ac turpis est.</p>
+                </div>
+                <div class="col-12 col-md-4 align-self-center">
+                    <img src="./img/logos/logo.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </header> 
+
+    <div class="container">
+        <!-- Welcome Message -->
+        <div class="row-content">
+            <br>
+            <br>
+            <h1>Hockey Stats Tracker</h1>
+        <!-- Player Input Form -->
+        <div class="row">
+            
+            <div class="col-5">
+                <h4>Add a player</h4>
+                <form id="player-form">
+
+                    <div class="form-group row"> 
+                        <div class="m-2">
+                            <input type="text" class="form-control" name="playerName" id="playerName" placeholder="Player Name">
+                        </div>
+                    </div>
+                
+                    <div class="form-group row"> 
+                        <div class="m-2">
+                            <input type="text" class="form-control" name="playerNumber" id="playerNumber" placeholder="Player Number">
+                        </div>
+                    </div>
+                
+                    <div class="form-group row"> 
+                        <div class="m-2">
+                            <select class="form-select" id="playerPosition">
+                                <option selected value="Player Position">Player Position</option>
+                                <option value="C">Center</option>
+                                <option value="W">Wing</option>
+                                <option value="D">Defense</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <div class="col-12 col-md-2 m-2">
+                            <input type="submit" value="Add Player" class="btn btn-primary">
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+            <!-- <div class="col-6 offset-1">
+                <h4>Add multiple players</h4>
+                <p>Upload an excel file or csv file with your entire roster. Download the template, save your roster, and upload below. </p>
+                <div><a href="/downloads/roster-template.csv" style="text-decoration: none;">Download Template</a></div>
+                <br>
+                <form id="rosterForm">
+                    <input type="file" id="datafile" name="filename">
+                    <a type="button" value="" data-bs-toggle="tooltip" data-bs-placement="top" title="Play Selected" class="btn btn-primary btn-sm fw-bold" onclick="importData()">
+                        <i class="fas fa-plus" data-bs-toggle="tooltip" data-bs-placement="top" title="Import Players"></i>
+                    </a>
+                </form>
+            </div> -->
+        </div>
+
+        <div class="row">
+            <!-- Controls -->
+            <div class="mt-5 mb-4">
+                <button type="button" value="" data-bs-toggle="tooltip" data-bs-placement="top" title="Play Selected" class="btn btn-success fw-bold" id="playerSelected" onclick="playSelected()">
+                    <i class="bi bi-play-fill" data-bs-toggle="tooltip" data-bs-placement="top" title="Play All"></i>
+                </button>
+                <button type="button" value="" data-bs-toggle="tooltip" data-bs-placement="top" title="Pause All" class="btn btn-warning fw-bold" id="pauseAll" onclick="pauseAll()">
+                    <i class="bi bi-pause-fill" data-bs-toggle="tooltip" data-bs-placement="top" title="Pause All"></i>
+                </button>
+                <!-- <a type="button" value="" data-bs-toggle="tooltip" data-bs-placement="top" title="Save to Account" class="btn btn-primary btn-sm" >
+                    <i class="bi bi-cloud-download-fill" data-bs-toggle="tooltip" data-bs-placement="top" title="Save to Account"></i>
+                </a> -->
+                <button type="button" value="" data-bs-toggle="tooltip" data-bs-placement="top" title="Export to CSV" class="btn btn-secondary" id="exportExcel" onclick="exportData()">
+                    <i class="bi bi-file-earmark-spreadsheet-fill" data-bs-toggle="tooltip" data-bs-placement="top" title="Export to CSV"></i>
+                </button>
+                <button type="button" value="" data-bs-toggle="tooltip" data-bs-placement="top" title="Clear Stats" class="btn btn-danger" onclick="clearAllStats()">
+                    <i class="bi bi-eraser-fill" data-bs-toggle="tooltip" data-bs-placement="top" title="Clear Stats"></i>
+                </button>
+                <button type="button" value="" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove All Players" class="btn btn-danger" onclick="removeAll()" >
+                    <i class="bi bi-trash-fill" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove All Players"></i>
+                </button>
+            </div>
+            
+
+                <!-- Table -->
+                <table id="playerTable" class="table table-striped table-hover table-sm ">
+
+                    <!-- Table Head-->
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Position</th>
+                            <th scope="col">Number</th>
+                            <th scope="col">TOI</th>
+                            <th scope="col">+/-</th>
+                            <th scope="col">Shots</th>
+                            <th scope="col">Hits</th>
+                            <th scope="col">Blocks</th>
+                            <th scope="col" colspan="3"></th>
+                        </tr>
+                    </thead>
+
+                    <!-- Table Body-->
+                    <tbody id="player-table">
+            
+                    </tbody>
+
+                    <!-- Table Foot -->
+                    <tfoot>
+                        <tr>
+                            <td colspan="1" class=""><Strong>Totals</Strong></td>
+                            <td colspan="4" class=""></td>
+                            <td id="totalShots" class="fw-bold" data-label="Total Shots:">0</td>
+                            <td  id="totalHits" class="fw-bold" data-label="Total Hits:">0</td>
+                            <td  id="totalBlocks" class="fw-bold" data-label="Total Blocks:">0</td>
+                            <td colspan="3"></td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+                </div>
+            </div>
+ 
+        </div>
+
+    </div>
+
+    <footer class="footer">            
+           <div class="container">
+               <div class="row">
+    
+           </div>
+    </footer>
+    <div class="col-auto align-self-center" id="copyright">
+        © Copyright 2022 TrackHockey
+    </div> 
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>  
+    <script src="/node_modules/jquery-csv/src/jquery.csv.js"></script>
+    <script src="./js/tracker.js"></script>
+    <script src="./js/export.js"></script>
+    <script src="./js/import.js"></script>
+    <script src="./js/drag.js"></script>
+
+</body>
+</html>

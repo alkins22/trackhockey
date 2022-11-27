@@ -170,7 +170,7 @@ class UI {
             </td>
             <td>
               <button type="" class="btn btn btn-secondary select">
-                <i class="fas fa-check-circle select"></i>
+                <i class="bi bi-check2-square"></i>
               </button>   
             </td>
             <td>
@@ -178,7 +178,7 @@ class UI {
             </td>
             <td>
                 <button type="" class="btn btn btn-danger delete">
-                    <i class="fas fa-user-minus"></i>
+                    <i class="bi bi-person-dash-fill"></i>
                 </button>
             </td>
         `;
@@ -292,7 +292,7 @@ class UI {
         if (el.classList.contains('delete')) {
             el.parentElement.parentElement.remove();
         }
-        if (el.classList.contains('fa-user-minus')) {
+        if (el.classList.contains('bi-person-dash-fill')) {
             el.parentElement.parentElement.parentElement.remove();
         }
     }
@@ -362,7 +362,7 @@ class Store {
         if (el.classList.contains('delete')) {
             playerID = el.parentElement.parentElement.id;
         }
-        if (el.classList.contains('fa-user-minus')) {
+        if (el.classList.contains('bi-person-dash-fill')) {
             playerID = el.parentElement.parentElement.parentElement.id;
         }
 
@@ -424,7 +424,7 @@ function selectRow(e){
             }
          });
     }
-  if (e.classList.contains("fa-check-circle")){
+  if (e.classList.contains("bi-check2-square")){
         playerID = e.parentElement.parentElement.parentElement.id;
         players.forEach((player) => {
             
